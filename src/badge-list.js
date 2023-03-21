@@ -9,27 +9,27 @@ class BadgeList extends LitElement {
 
   static styles = css`
 
-input {
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-bottom: 1px solid black;
-  transition: all .3s ease-in-out;
-}
-input:focus {
-  border-bottom: 2px solid blue;
-  outline: 1px solid grey;
-  outline-offset: 4px;
-}
-input:hover:not(:focus) {
-  border-bottom: 2px solid grey; 
-}
+    input {
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-bottom: 1px solid black;
+      transition: all .3s ease-in-out;
+    }
+    input:focus {
+      border-bottom: 2px solid blue;
+      outline: 1px solid grey;
+      outline-offset: 4px;
+    }
+    input:hover:not(:focus) {
+      border-bottom: 2px solid grey; 
+    }
 
-@media (prefers-reduced-motion) {
-  input {
-    transition: none;
-  }
-}
+    @media (prefers-reduced-motion) {
+      input {
+        transition: none;
+      }
+    }
     :host {
       min-height: 100vh;
       display: flex;
@@ -80,30 +80,8 @@ input:hover:not(:focus) {
   render() {
     return html`
       <main>
-      <input type="text" id="getme" placeholder="Search" />
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/BadgeList.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
+      <input type="text" id="getme" placeholder="Search Content, Topics, and People" />
       </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
     `;
   }
 }
