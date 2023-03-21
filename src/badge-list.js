@@ -8,6 +8,28 @@ class BadgeList extends LitElement {
   }
 
   static styles = css`
+
+input {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid black;
+  transition: all .3s ease-in-out;
+}
+input:focus {
+  border-bottom: 2px solid blue;
+  outline: 1px solid grey;
+  outline-offset: 4px;
+}
+input:hover:not(:focus) {
+  border-bottom: 2px solid grey; 
+}
+
+@media (prefers-reduced-motion) {
+  input {
+    transition: none;
+  }
+}
     :host {
       min-height: 100vh;
       display: flex;
@@ -58,6 +80,7 @@ class BadgeList extends LitElement {
   render() {
     return html`
       <main>
+      <input type="text" id="getme" placeholder="Search" />
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.header}</h1>
 
