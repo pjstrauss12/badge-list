@@ -17,6 +17,7 @@ class Badge extends LitElement {
     
     .image {
       width: 60px;
+      height: 60px;
       padding: 0px 15px 00px 0px;
     }
     
