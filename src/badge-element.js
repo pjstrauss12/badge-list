@@ -54,4 +54,4 @@ class Badge extends LitElement {
        </div>`;
    }
 }
-  customElements.define('badge', Badge);
+  customElements.define('badge-element', Badge);
