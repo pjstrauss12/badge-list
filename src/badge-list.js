@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import '@lrnwebcomponents/simple-icon/simple-icon.js';
+import "./badge-element.js";
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
@@ -82,6 +83,10 @@ class BadgeList extends LitElement {
     return html`
       <main>
       <input type="text" id="getme" placeholder="Search Content, Topics, and People" />
+      <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
       </main>
     `;
   }
