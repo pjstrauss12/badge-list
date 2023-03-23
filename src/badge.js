@@ -3,9 +3,12 @@ import '@lrnwebcomponents/simple-icon/simple-icon.js';
 class Badge extends LitElement {
     static properties = {
       header: { type: String },
+      name: {type: String,reflect: true},
+      badge: {type: String},
     }
   
-    static styles = css`
+    static get styles() {
+      return css`
 
     .blankbadge {
       width: 600px;
@@ -28,12 +31,19 @@ class Badge extends LitElement {
     h3 {
        padding: 0px 10px 0px 0px;
     }
-`
+    `;
+  }
+
+    constructor() {
+      super();
+      this.name = "BlankBadge";
+      this.badge = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRsOq0qlUMYbf6GrwFKPCYVIj1YIcMz8b5ag&usqp=CAU';
+    }
     render() {
       return html`
       <div class="blankbadge">
-      <img class="image" src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRsOq0qlUMYbf6GrwFKPCYVIj1YIcMz8b5ag&usqp=CAU/>
-      <h3>Badge Name </h3>
+      <img class="image" src="${this.imgurl}"/>
+      <h3>${this.name}</h3>
         <details class="details">
           <summary></summary>
             <div>
