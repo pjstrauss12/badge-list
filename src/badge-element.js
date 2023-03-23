@@ -11,21 +11,22 @@ class Badge extends LitElement {
       return css`
 
     .blankbadge {
-      width: 600px;
+      width: 1200px;
       border: 2px solid black;
       display: inline-flex;
       color: black;
       background-color: grey;
+      margin-top: 20px;
           }
     
     .image {
-      width: 60px;
-      height: 60px;
+      width: 100px;
+      height: 100px;
       padding: 0px 15px 00px 0px;
     }
     
     .details {
-       margin-top: 21px;
+       margin-top: 35px;
     }
     
     h3 {
@@ -38,11 +39,12 @@ class Badge extends LitElement {
       super();
       this.name = "BlankBadge";
       this.badge = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRsOq0qlUMYbf6GrwFKPCYVIj1YIcMz8b5ag&usqp=CAU';
+//      this.badge = <simple-icon></simple-icon>
     }
     render() {
       return html`
       <div class="blankbadge">
-      <img class="image" src="${this.imgurl}"/>
+      <img class="image" src="${this.badge}"/>
       <h3>${this.name}</h3>
         <details class="details">
           <summary></summary>

@@ -88,6 +88,12 @@ class BadgeList extends LitElement {
       <badge-element></badge-element>
       <badge-element></badge-element>
       <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
+      <badge-element></badge-element>
       </main>
     `;
   }
