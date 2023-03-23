@@ -17,6 +17,7 @@ class BadgeList extends LitElement {
       border: none;
       border-bottom: 1px solid black;
       transition: all .3s ease-in-out;
+      width: 500px;
     }
     input:focus {
       border-bottom: 2px solid blue;
