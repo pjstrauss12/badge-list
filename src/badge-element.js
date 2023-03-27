@@ -23,7 +23,7 @@ class Badge extends LitElement {
       width: 100px;
       height: 100px;
       padding: 0px 15px 00px 0px;
-    }
+          }
     
     .details {
        margin-top: 35px;
@@ -38,13 +38,13 @@ class Badge extends LitElement {
     constructor() {
       super();
       this.name = "BlankBadge";
-      this.badge = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRsOq0qlUMYbf6GrwFKPCYVIj1YIcMz8b5ag&usqp=CAU';
-//      this.badge = <simple-icon></simple-icon>
+ //     this.badge = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRsOq0qlUMYbf6GrwFKPCYVIj1YIcMz8b5ag&usqp=CAU';
+      this.badge = 'star';
     }
     render() {
       return html`
       <div class="blankbadge">
-      <img class="image" src="${this.badge}"/>
+      <simple-icon class="image" icon="${this.badge}"></simple-icon>
       <h3>${this.name}</h3>
         <details class="details">
           <summary></summary>
