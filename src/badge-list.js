@@ -3,8 +3,6 @@ import '@lrnwebcomponents/simple-icon/simple-icon.js';
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 import "./badge-element.js";
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-
 class BadgeList extends LitElement {
   static properties = {
     header: { type: String },
@@ -78,12 +76,13 @@ class BadgeList extends LitElement {
 
   constructor() {
     super();
-    this.header = 'My app';
+    this.header = 'Badges';
   }
 
   render() {
     return html`
       <main>
+        <div class="wrapper">${this.header}</div>
       <input type="text" id="getme" placeholder="Search Content, Topics, and People" />
       <badge-element></badge-element>
       <badge-element></badge-element>
