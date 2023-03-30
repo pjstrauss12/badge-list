@@ -6,32 +6,12 @@ import "./badge-element.js";
 class BadgeList extends LitElement {
   static properties = {
     header: { type: String },
+    badges: {type: Array}
   }
 
   static styles = css`
 
-    input {
-      font-size: 20px;
-      font-weight: bold;
-      border: none;
-      border-bottom: 1px solid black;
-      transition: all .3s ease-in-out;
-      width: 500px;
-    }
-    input:focus {
-      border-bottom: 2px solid blue;
-      outline: 1px solid grey;
-      outline-offset: 4px;
-    }
-    input:hover:not(:focus) {
-      border-bottom: 2px solid grey; 
-    }
-
-    @media (prefers-reduced-motion) {
-      input {
-        transition: none;
-      }
-    }
+    
     :host {
       min-height: 100vh;
       display: flex;
@@ -77,23 +57,41 @@ class BadgeList extends LitElement {
   constructor() {
     super();
     this.header = 'Badges';
+    this.badges = [];
+    this.updateBadges();
   }
+  updateBadges(){
+    const address = '../api/badges';
+        fetch(address).then((response) => {
+            if (response.ok) {
+                return response.json()
+            }
+            return [];
+        })
+        .then((data) => {
+            this.badges = data;
+        });
+}
 
   render() {
     return html`
       <main>
-        <div class="wrapper">${this.header}</div>
-      <input type="text" id="getme" placeholder="Search Content, Topics, and People" />
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
-      <badge-element></badge-element>
+        <h3>${this.header}</h3>
+        <div class="wrapper">
+            ${this.badges.map(thing => html`
+            <div class="item">
+                <badge-element name="${thing.name}" 
+                badge="${thing.badge}" 
+                description="${thing.description}" 
+                link="${thing.link}" 
+                linkName="${thing.linkName}" 
+                author="${thing.author}" 
+                time="${thing.time}" 
+                steps="${thing.steps}">
+              </badge-element>
+              `)}
+            </div>
+            </div>
       </main>
     `;
   }
