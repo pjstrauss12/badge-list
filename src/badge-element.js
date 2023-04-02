@@ -18,8 +18,8 @@ class Badge extends LitElement {
       return css`
 
       .blankbadge {
-        border: 1px solid blue;
-        border-left: 15px solid blue;
+        border: 1px solid rgb(56, 137, 181);
+        border-left: 30px solid rgb(56, 137, 181);
         border-radius: 5px;
         width: 1000px;
         text-align: left;
@@ -27,6 +27,7 @@ class Badge extends LitElement {
         margin: 10px;
         display: flex;
         align-items: center;
+        background-color: rgb(202, 233, 250);
       }
       
       .image-name-container {
@@ -35,8 +36,8 @@ class Badge extends LitElement {
       }
       
       .image {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         padding: 0px 15px 0px 0px;
       }
       
