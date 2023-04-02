@@ -17,41 +17,59 @@ class Badge extends LitElement {
     static get styles() {
       return css`
 
-    .blankbadge {
-      border: 1px solid blue;
-      border-left: 15px solid blue;
-      border-radius: 5px;
-      width: 1000px;
-      text-align: left;
-      font-family: "effra", sans-serif;
-      margin: 10px;
+      .blankbadge {
+        border: 1px solid rgb(56, 137, 181);
+        border-left: 30px solid rgb(56, 137, 181);
+        border-radius: 5px;
+        width: 1000px;
+        text-align: left;
+        font-family: "effra", sans-serif;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(202, 233, 250);
       }
-    
-    .image {
-      width: 100px;
-      height: 100px;
-      padding: 0px 15px 00px 0px;
-          }
-    
-    .details {
-       margin-top: 35px;
-    }
-    
-    /* .name {
-       padding: 33px 10px 0px 0px;
-    } */
-    .description{
-      padding: 10px;
-    }
-    .link{
-      padding: 10px;
-    }
-    .author{
-      padding: 10px;
-    }
-    .steplist{
-      padding: 10px;
-    }
+      
+      .image-name-container {
+        display: flex;
+        align-items: center;
+      }
+      
+      .image {
+        width: 80px;
+        height: 80px;
+        padding: 0px 15px 0px 0px;
+      }
+      
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 0px 15px 0px 0px;
+      }
+      
+      .details-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+      }
+      
+      .description {
+        grid-column: 1 / 4;
+        padding: 10px;
+      }
+      
+      .link {
+        padding: 10px;
+      }
+      
+      .author {
+        padding: 10px;
+      }
+      
+      .steplist {
+        padding: 10px;
+      }
+      
     `;
   }
 
@@ -68,26 +86,24 @@ class Badge extends LitElement {
     }
     render() {
       return html`
-      <div class="blankbadge">
-      <simple-icon class="image" icon="${this.badge}"></simple-icon>
-      <div class="name">${this.name}</div>
-        <details class="details">
-          <summary></summary>
-          <div class="description">
-          ${this.description}
+        <div class="blankbadge">
+          <div class="image-name-container">
+            <simple-icon class="image" icon="${this.badge}"></simple-icon>
+            <div class="name">${this.name}</div>
           </div>
-          <div class="link">
-            <a href="${this.link}">${this.linkName}</a>
+          <div class="details-container">
+            <details class="details">
+              <summary></summary>
+              <div class="description">${this.description}</div>
+              <div class="link">
+                <a href="${this.link}">${this.linkName}</a>
+              </div>
+              <div class="author">${this.author}</div>
+              <div class="steplist">${this.steps}</div>
+            </details>
           </div>
-          <div class="author">
-            ${this.author}
-          </div>
-          <div class="steplist">
-            ${this.steps}
-          </div>
-    </details>
-            
-       </div>`;
-   }
+        </div>
+      `;
+    }
 }
   customElements.define('badge-element', Badge);
