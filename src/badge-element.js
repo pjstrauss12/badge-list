@@ -76,7 +76,7 @@ class Badge extends LitElement {
     constructor() {
       super();
       this.name = "Amazon";
-      this.badge = 'save';
+      this.badge = "https://www.drupal.org/files/project-images/553dbabbd287c26ca83aef42.jpg";
       this.description = 'Super cool HAX .com surch stuff';
       this.link = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       this.linkName = "This link goes somewhere";
@@ -88,7 +88,7 @@ class Badge extends LitElement {
       return html`
         <div class="blankbadge">
           <div class="image-name-container">
-            <simple-icon class="image" icon="${this.badge}"></simple-icon>
+            <img class="image" src="${this.badge}">
             <div class="name">${this.name}</div>
           </div>
           <div class="details-container">
