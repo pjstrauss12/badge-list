@@ -11,21 +11,22 @@ class Steps extends LitElement {
     static get styles() {
         return css`
         .blanksteps {
-            width: 600px;
+            width: 700px;
             border: 2px solid black;
             display: inline-flex;
             color: black;
-            background-color: grey;
-                }
+            background-color:  rgb(227, 226, 225);
+            padding: 0px 0px 0px 0px;
+            }
           
           .image {
-            width: 60px;
-            height: 60px;
-            padding: 0px 15px 00px 0px;
+            width: 40px;
+            height: 40px;
+            padding: 0px 15px 0px 0px;
           }
 
           .time{
-            padding: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 300px;
           }
           
         `;
