@@ -5,7 +5,7 @@ class Steps extends LitElement {
     static properties = { 
         statment: {type: String,reflect: true},
         icon: {type: String},
-        time: {type: String},
+        worktime: {type: String},
     }
 
     static get styles() {
@@ -25,7 +25,7 @@ class Steps extends LitElement {
           }
 
           .time{
-
+            padding: 0px 0px 0px 0px;
           }
           
         `;
@@ -35,7 +35,7 @@ class Steps extends LitElement {
     super();
     this.statment = "Blank";
     this.icon = "save";
-    this.time= "4:00"
+    this.worktime= "4:00"
   }
 
   render() {
@@ -43,9 +43,9 @@ class Steps extends LitElement {
     <div class="blanksteps">
     <simple-icon class="image" icon=${this.icon}></simple-icon>
     <div class="statment">${this.statment}</div>
-    <div class ="time">${this.time}</div>
+    <div class ="time">${this.worktime}</div>
   </div>
     `;
     }
 }
-  customElements.define('steps-too', Badge);
+  customElements.define('steps-too', Steps);

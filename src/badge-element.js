@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import '@lrnwebcomponents/simple-icon/simple-icon.js';
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
+import "./steps-too.js"
 class Badge extends LitElement {
     static properties = {
       header: { type: String },
@@ -82,8 +83,22 @@ class Badge extends LitElement {
       this.linkName = "This link goes somewhere";
       this.author = 'YA BOI';
       this.time = '4:00';
-      this.steps = [1,2,3];
+      this.steps = [];
+      this.updateSteps();
     }
+
+    updateSteps(){
+      const address = '../api/steps';
+          fetch(address).then((response) => {
+              if (response.ok) {
+                  return response.json()
+              }
+              return [];
+          })
+          .then((data) => {
+              this.steps = data;
+          });
+  }
     render() {
       return html`
         <div class="blankbadge">
@@ -99,7 +114,17 @@ class Badge extends LitElement {
                 <a href="${this.link}">${this.linkName}</a>
               </div>
               <div class="author">${this.author}</div>
-              <div class="steplist">${this.steps}</div>
+              <div class="stepwrapper">
+            ${this.steps.map(thing => html`
+              <div class="item">
+                <steps-too
+                statement="${thing.statement}"
+                icon="${thing.icon}"
+                worktime="${thing.worktime}">
+              </steps-too>
+              </div>
+              `)}
+            </div>
             </details>
           </div>
         </div>

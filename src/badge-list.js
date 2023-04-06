@@ -90,8 +90,8 @@ class BadgeList extends LitElement {
                 time="${thing.time}" 
                 steps="${thing.steps}">
               </badge-element>
+              </div>
               `)}
-            </div>
             </div>
       </main>
     `;
