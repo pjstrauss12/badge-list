@@ -4,47 +4,42 @@ export default async function handler(request, res) {
       { "name": "Amazon Cognito",
       "badge": "https://www.drupal.org/files/project-images/553dbabbd287c26ca83aef42.jpg",
       "description": "sample description",
-      "link": "https://www.psu.edu",
+      "link": "https://youtu.be/C4SVih8Rn5Y?t=3",
       "linkName": "Something",
       "author": "james bond",
-      "time": "4 hours",
-      "steps": "[1,2,3]"
+      "time": "4 hours"
       },
       { "name": "Amazon I AM",
       "badge": "https://i0.wp.com/sra.io/wp-content/uploads/2020/01/AWS-IAM-Exploitation.png?fit=1102%2C620&ssl=1",
       "description": "sample description",
-      "link": "https://www.psu.edu",
+      "link": "https://youtu.be/C4SVih8Rn5Y?t=3",
       "linkName": "Something",
       "author": "james bond",
-      "time": "4 hours",
-      "steps": "[1,2,3]"
+      "time": "4 hours"
       },
       { "name": "Signing up for AWS Web Services",
       "badge": "https://upload.wikimedia.org/wikipedia/commons/1/1d/AmazonWebservices_Logo.svg",
       "description": "sample description",
-      "link": "https://www.psu.edu",
+      "link": "https://youtu.be/C4SVih8Rn5Y?t=3",
       "linkName": "Something",
       "author": "james bond",
-      "time": "4 hours",
-      "steps": "[1,2,3]"
+      "time": "4 hours"
       },
       { "name": "AWS- LAMBDA Phase 1",
       "badge": "https://cdn.worldvectorlogo.com/logos/aws-lambda-1.svg",
       "description": "AWS Lambda is an event-driven, serverless computing platform provided by Amazon as part of Amazon Web Services.  It is a computing services that runs code in response to events and automatically manages the computing resources required by that code.",
-      "link": "https://www.psu.edu",
+      "link": "https://youtu.be/C4SVih8Rn5Y?t=3",
       "linkName": "AWS Lambda Info Link",
       "author": "Parker Strauss",
-      "time": "4 hours",
-      "steps": "[1,2,3]"
+      "time": "4 hours"
       },
       { "name": "Amazon S3 Phase 1",
       "badge": "https://fathomtech.io/blog/using-aws-s3-and-cloudfront-for-fast-static-web-sites/amazon-s3.png",
       "description": "sample description",
-      "link": "https://www.psu.edu",
+      "link": "https://youtu.be/C4SVih8Rn5Y?t=3",
       "linkName": "Something",
       "author": "james bond",
-      "time": "4 hours",
-      "steps": "[1,2,3]"
+      "time": "4 hours"
       }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
