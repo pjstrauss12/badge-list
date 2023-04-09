@@ -15,40 +15,17 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
-    input {
-      font-size: 20px;
-      font-weight: bold;
-      border: none;
-      border-bottom: 1px solid black;
-      transition: all .3s ease-in-out;
-      width: 500px;
-      display: block;
-      margin: auto;
-    }
-    input:focus {
-      border-bottom: 2px solid blue;
-      outline: 1px solid grey;
-      outline-offset: 4px;
-    }
-    input:hover:not(:focus) {
-      border-bottom: 2px solid grey; 
-    }
-
-    @media (prefers-reduced-motion) {
-      input {
-        transition: none;
-      }
-    }
   </style>
   <title>badge-list</title>
 </head>
 
 <body>
-  <input type="text" id="getme" placeholder="Search Content, Topics, and People" />
   <badge-list></badge-list>
   <script type="module">
     import "./src/badge-element.js";
     import "./src/badge-list.js";
+    import "./src/search-widget.js"
+    import "./src/steps-too.js"
   </script>
   <script>
     document.querySelector("input").addEventListener("input", (e) => {

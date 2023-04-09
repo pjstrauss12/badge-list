@@ -1,6 +1,6 @@
 export default async function handler(request, res) {
-
-    const badges = [
+  const search = request.query.search || '';
+    var badges = [
       { "name": "Amazon Cognito",
       "badge": "https://www.drupal.org/files/project-images/553dbabbd287c26ca83aef42.jpg",
       "description": "sample description",
@@ -42,6 +42,12 @@ export default async function handler(request, res) {
       "time": "4 hours"
       }
     ];
+    badges.map((player) => {
+      player.index = player.name.toLowerCase() + " " + player.author.toLowerCase();
+    });
+    badges = badges.filter((player) => {
+      return player.index.indexOf(search.toLowerCase()) > -1;
+    });
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

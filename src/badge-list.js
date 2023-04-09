@@ -3,6 +3,7 @@ import '@lrnwebcomponents/simple-icon/simple-icon.js';
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 import "./badge-element.js";
 import "./steps-too.js";
+import "./search-widget.js";
 
 class BadgeList extends LitElement {
   static properties = {
@@ -59,25 +60,34 @@ class BadgeList extends LitElement {
     super();
     this.header = 'Badges';
     this.badges = [];
-    this.updateBadges();
+    this.getSearchResults().then((results) => {
+      this.badges = results;
+    });
   }
-  updateBadges(){
-    const address = '../api/badges';
-        fetch(address).then((response) => {
-            if (response.ok) {
-                return response.json()
-            }
-            return [];
-        })
-        .then((data) => {
-            this.badges = data;
-        });
-}
+
+  async getSearchResults(value){
+    const address = `/api/badges?search=${value}`;
+    const results = await fetch(address).then((response) => {
+      if (response.ok) {
+          return response.json()
+      }
+      return [];
+    })
+    .then((data) => {
+      return data;
+    });
+    return results;
+  }
+  async _handleSearchEvent(e){
+    const term = e.detail.value;
+    this.badges = await this.getSearchResults(term);
+  }
 
   render() {
     return html`
       <main>
         <h3>${this.header}</h3>
+        <search-widget @value-changed="${this._handleSearchEvent}"></search-widget>
         <div class="wrapper">
             ${this.badges.map(thing => html`
             <div class="item">
