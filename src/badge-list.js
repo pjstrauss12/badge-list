@@ -65,7 +65,7 @@ class BadgeList extends LitElement {
     });
   }
 
-  async getSearchResults(value){
+  async getSearchResults(value = ''){
     const address = `/api/badges?search=${value}`;
     const results = await fetch(address).then((response) => {
       if (response.ok) {
