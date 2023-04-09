@@ -10,6 +10,7 @@ class Badge extends LitElement {
       description: {type: String},
       link: {type: String},
       linkName: {type: String},
+      authorImage: {type: String},
       author: {type: String},
       time: {type: String},
       steps: {type: Array},
@@ -19,13 +20,14 @@ class Badge extends LitElement {
       return css`
 
       .blankbadge {
-        border: 1px solid rgb(56, 137, 181);
+        border: 1px solid #3e98d3;
         border-left: 30px solid rgb(56, 137, 181);
         border-radius: 5px;
         width: 1000px;
         text-align: left;
         font-family: "effra", sans-serif;
-        margin: 10px;
+        margin: auto;
+        margin-bottom: 5px
         display: flex;
         align-items: center;
         background-color: rgb(202, 233, 250);
@@ -63,6 +65,12 @@ class Badge extends LitElement {
         padding: 10px;
       }
       
+      .authorImage{
+        border-radius: 50%;
+        max-width: 40px;
+        max-height: 40px;
+      }
+
       .author {
         padding: 10px;
       }
@@ -81,6 +89,7 @@ class Badge extends LitElement {
       this.description = 'Super cool HAX .com surch stuff';
       this.link = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       this.linkName = "This link goes somewhere";
+      this.authorImage = "https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png"
       this.author = 'YA BOI';
       this.time = '4:00';
       this.steps = [];
@@ -113,7 +122,7 @@ class Badge extends LitElement {
               <div class="link">
                 <a href="${this.link}">${this.linkName}</a>
               </div>
-              <div class="author">${this.author}</div>
+              <div class="creator">Badge Creator: </div> <img class="authorImage" src="${this.authorImage}"><div class="author">${this.author}</div>
               <div class="stepwrapper">
             ${this.steps.map(thing => html`
               <div class="item">

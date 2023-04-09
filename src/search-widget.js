@@ -15,9 +15,21 @@ export class SearchWidget extends LitElement {
       display: block;
     }
     simple-icon {
-      display: inline-block;
       --simple-icon-height: 40px;
       --simple-icon-width: 40px;
+    }
+    .wrapper{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .searchbar{
+      width: 500px;  
+      height: 30px;
+      border: 1px solid #f8f8f7;
+      font-family: verdana, sans-serif;
+      display: block;
+      padding: 8px 4px 8px 64px;
+      background-position: 24px;
     }
     `;
   }
@@ -29,8 +41,9 @@ export class SearchWidget extends LitElement {
 
   render() {
     return html`
-      <simple-icon icon="icons:search"></simple-icon>
-      <input type="text" value="${this.value}" @input="${this._handleInput}" />
+    <div class="wrapper">
+    <simple-icon icon="icons:search"></simple-icon><input type="text" class="searchbar" value="${this.value}" @input="${this._handleInput}" />
+    </div>
     `;
   }
   _handleInput(e) {
