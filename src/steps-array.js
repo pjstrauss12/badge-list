@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import '@lrnwebcomponents/simple-icon/simple-icon.js';
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
-class Steps extends LitElement {
+class StepsArray extends LitElement {
     static properties = { 
         statement: {type: String,reflect: true},
         icon: {type: String},
@@ -49,4 +49,4 @@ class Steps extends LitElement {
     `;
     }
 }
-  customElements.define('steps-too', Steps);
+  customElements.define('steps-array', StepsArray);

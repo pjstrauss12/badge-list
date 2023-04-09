@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import '@lrnwebcomponents/simple-icon/simple-icon.js';
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
-import "./steps-too.js"
+import "./steps-array.js"
 class Badge extends LitElement {
     static properties = {
       header: { type: String },
@@ -127,11 +127,11 @@ class Badge extends LitElement {
               <div class="stepwrapper">
             ${this.steps.map(thing => html`
               <div class="item">
-                <steps-too
+                <steps-array
                 statement="${thing.statement}"
                 icon="${thing.icon}"
                 worktime="${thing.worktime}">
-              </steps-too>
+              </steps-array>
               </div>
               `)}
             </div>
