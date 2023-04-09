@@ -2,14 +2,14 @@ export default async function handler(request, res) {
 
     const steps =    [
     {
-        "statement": "Something",
+        "statement": "Work on the project",
         "icon": "save",
-        "worktime": "4"
+        "worktime": "2.0 hours"
     },
     {
-        "statement": "Something",
+        "statement": "Submit the project",
         "icon": "save",
-        "worktime": "4"
+        "worktime": "2.0 hours"
     }
 ]
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

@@ -10,9 +10,9 @@ class Badge extends LitElement {
       description: {type: String},
       link: {type: String},
       linkName: {type: String},
+      time: {type: String},
       authorImage: {type: String},
       author: {type: String},
-      time: {type: String},
       steps: {type: Array},
     }
   
@@ -89,9 +89,9 @@ class Badge extends LitElement {
       this.description = 'Super cool HAX .com surch stuff';
       this.link = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       this.linkName = "This link goes somewhere";
+      this.time = '4:00';
       this.authorImage = "https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png"
       this.author = 'YA BOI';
-      this.time = '4:00';
       this.steps = [];
       this.updateSteps();
     }
@@ -122,6 +122,7 @@ class Badge extends LitElement {
               <div class="link">
                 <a href="${this.link}">${this.linkName}</a>
               </div>
+              <div class="time">${this.time}</div>
               <div class="creator">Badge Creator: </div> <img class="authorImage" src="${this.authorImage}"><div class="author">${this.author}</div>
               <div class="stepwrapper">
             ${this.steps.map(thing => html`

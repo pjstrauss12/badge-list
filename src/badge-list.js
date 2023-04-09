@@ -95,9 +95,10 @@ class BadgeList extends LitElement {
                 badge="${thing.badge}" 
                 description="${thing.description}" 
                 link="${thing.link}" 
-                linkName="${thing.linkName}" 
+                linkName="${thing.linkName}"
+                time="${thing.time}"  
+                authorImage="${thing.authorImage}"
                 author="${thing.author}" 
-                time="${thing.time}" 
                 steps="${thing.steps}">
               </badge-element>
               </div>

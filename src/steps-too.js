@@ -3,7 +3,7 @@ import '@lrnwebcomponents/simple-icon/simple-icon.js';
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 class Steps extends LitElement {
     static properties = { 
-        statment: {type: String,reflect: true},
+        statement: {type: String,reflect: true},
         icon: {type: String},
         worktime: {type: String},
     }
@@ -34,7 +34,7 @@ class Steps extends LitElement {
 
   constructor() {
     super();
-    this.statment = "Blank";
+    this.statement = "Blank";
     this.icon = "save";
     this.worktime= "4:00"
   }
@@ -43,7 +43,7 @@ class Steps extends LitElement {
     return html`
     <div class="blanksteps">
     <simple-icon class="image" icon=${this.icon}></simple-icon>
-    <div class="statment">${this.statment}</div>
+    <div class="statement">${this.statement}</div>
     <div class ="time">${this.worktime}</div>
   </div>
     `;
